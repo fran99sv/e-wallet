@@ -1,0 +1,159 @@
+/*Recordar que el form lo podre hacer negro y con una fuente blanca y el boton color amarillo*/
+@import "fuentes.css";
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "Proxima";
+}
+.registro{
+  max-width: auto;
+  position: relative;
+  float: left;
+  left: 20%;
+
+}
+.login{
+  max-width: auto;
+  position: relative;
+  float: left;
+  left: 25%;
+
+}
+form {
+  width: 300px;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background: #f4f7f8;
+  border-radius: 8px;
+}
+h1 {
+  margin: 0 0 30px 0;
+  text-align: center;
+}
+
+input[type="text"],input[type="password"],input[type="date"],input[type="datetime"],input[type="email"],input[type="number"],input[type="search"],input[type="tel"],input[type="time"],input[type="url"],textarea,select {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  font-size: 16px;
+  height: auto;
+  margin: 0;
+  outline: 0;
+  padding: 15px;
+  width: 90%;
+  background-color: #e8eeef;
+  color: #8a97a0;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+  margin-bottom: 30px;
+}
+button {
+  padding: 19px 39px 18px 39px;
+  color: #FFF;
+  background-color: #4bc970;
+  font-size: 18px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+  width: 100%;
+  border: 1px solid #3ac162;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+  margin-bottom: 10px;
+}
+@media only screen and (max-width: 767px) {
+    .contenedor{
+      width: 100%;
+    }
+    .registro{
+      max-width: auto;
+      position: relative;
+      float: left;
+      left: 9%;
+      height: 20px;
+
+    }
+    .login{
+      max-width: auto;
+      position: relative;
+      float: left;
+      left: 14%;
+
+    }
+    form{
+      width: 250px;
+      margin: 10px auto;
+      padding: 10px 20px;
+      background: #f4f7f8;
+      border-radius: 8px;
+    }
+}
+@media only screen and (max-width: 479px) {
+    .contenedor{
+      width: 150%;
+    }
+    .registro{
+      max-width: 94%;
+      height: 20px;
+      position: absolute;
+      left: 0%;
+      bottom: 41%;
+      width: 100%;
+
+    }
+    .login{
+      max-width: 94%;
+      position: absolute;
+      float: left;
+      left: 0%;
+      margin-bottom:  0%;
+    }
+    form{
+      width: 94%;
+      padding: 10px 20px;
+      background: #f4f7f8;
+    }
+    body {
+    }
+    button{
+      width: 100%;
+    }
+}
+@media only screen and (max-width: 320px) {
+    .contenedor{
+      width: 100%;
+    }
+    .registro{
+      max-width: 100%;
+      height: 20px;
+      position: absolute;
+      left: -1%;
+      bottom: 57%;
+      width: 100%;
+
+    }
+    .login{
+      max-width: 100%;
+      position: absolute;
+      float: left;
+      left: -1%;
+      margin-bottom:  0%;
+    }
+    form{
+      width: 100%;
+      padding: 5px 10px;
+      background: #f4f7f8;
+      border-radius: 8px;
+    }
+    button{
+      margin-left: -5%;
+      width: 90%;
+    }
+}
+/*#global{
+	z-index: 999;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,.5);
+	float: left;
+	display: block;
+
+}*/

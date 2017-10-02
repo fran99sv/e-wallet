@@ -1,0 +1,8 @@
+@font-face {
+  font-family: "Proxima";
+  src: url('fonts/Proxima Nova Bold.otf') format('truetype');
+}
+@font-face {
+  font-family: "Gotham";
+  src: url('fonts/gotham-medium-1361523254.otf') format('opentype');
+}

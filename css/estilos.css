@@ -1,0 +1,143 @@
+
+/*---------------Menú de opciones---------------*/
+
+div#contenedor {
+    width: 100%;
+    height: 410px;
+    margin-bottom: -5%;
+}
+
+div.opciones {
+    width: 33.3%;
+    height: 100%;
+    float: left;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: 0.5s;
+    -webkit-perspective: 1;
+}
+
+div.cont1 {
+    width: 101%;
+    height: 105%;
+    margin-left: 0px;
+    backface-visibility: hidden;
+    position: absolute;
+}
+
+div.cont1 {
+  background-color: #4CBD40;
+}
+
+div.cont2 {
+    width: 100%;
+    height: 105%;
+    margin-left: 449px;
+    backface-visibility: hidden;
+    position: absolute;
+}
+
+div.cont2 {
+  background-color: rgb(34,167,240);
+}
+
+div.cont3 {
+    width: 101%;
+    height: 105%;
+    margin-left: 894px;
+    backface-visibility: hidden;
+    position: absolute;
+}
+
+div.cont3 {
+  background-color: rgb(245,39,39);
+}
+
+h1.funcion {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 190%;
+    color: #FFF;
+    text-decoration: none;
+    font-family: century gothic;
+}
+
+h3 { 
+    text-align: center;
+    font-size: 190%;
+    color: #FFF;
+    text-decoration: none;
+    font-family: century gothic;
+}
+
+div.opcion > div {
+    margin-top: 60px;
+    text-align: center;
+}
+
+img.img-user {
+    width: 115px;
+    height: 115px;
+    margin-top: 25px;
+    margin-left: 155px;
+}
+
+div.ver{
+    margin-top: 25px;
+    padding: 5px;
+    margin-left: 75px;
+    cursor: pointer;
+    width: 60%;
+    height: 5%;
+    border-radius: 15px;
+    font-family: century gothic;
+    text-align: center;
+}
+
+div.ver {
+    background-color: #A4A5A4;
+}
+
+div.ver:hover {
+    background-color: gray;
+    transition: 0.8s;
+}
+
+div.agregar{
+    margin-top: 15px;
+    padding: 5px;
+    margin-left: 75px;
+    cursor: pointer;
+    width: 60%;
+    height: 5%;
+    border-radius: 15px;
+    font-family: century gothic;
+    text-align: center;
+}
+
+div.agregar {
+    background-color: #A4A5A4;
+}
+
+div.agregar:hover {
+    background-color: gray;
+    transition: 0.8s;
+}
+
+input{
+    text-align: center;
+    margin-left: 35px; 
+    margin-top: 10px; 
+    width: 250px;
+    height: 25px;
+}
+
+.bb{
+    text-align: center;
+    margin-bottom: 5px;
+    margin: 8px;
+    float: right;
+    width: 150px;
+    height: 30px;
+}
+

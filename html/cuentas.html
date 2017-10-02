@@ -1,0 +1,212 @@
+<!DOCTYPE HTML>
+<html lang="ES">
+<head>
+   <title>eWallet</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="../css/menu.css">
+   <link rel="stylesheet" href="../css/modal.css">
+   <link rel="stylesheet" href="../css/estilos.css">
+   <link rel="icon" type="image/png" href="../img/icon.png">
+   <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+   <script src="../js/menu.js"></script>
+</head>
+<body>
+
+<div id="cssmenu">
+   <ul>
+      <li class=""><a href="iprincipal.html">eWallet</a></li>
+      <li class="active"><a href="cuentas.html">Cuentas</a>
+         <ul>
+            <li class="has-sub"><a href="#">Submenu 1</a>
+               <ul>
+                  <li><a href="#">Opción 1</a></li>
+                  <li><a href="#">Opción 2</a></li>
+               </ul>
+            </li>
+         
+            <li class="has-sub"><a href="#">Submenu 2</a>
+               <ul>
+                  <li><a href="#">Opción 1</a></li>
+                  <li><a href="#">Opción 2</a></li>
+               </ul>
+            </li>
+         </ul>
+      </li>
+      <li class=""><a href="ingresos.html">Ingresos</a></li>
+      <li class=""><a href="gastos.html">Gastos</a></li>
+      <li class=""><a href="estadisticas.html">Estadísticas</a></li>
+      <li class=""><a href="configuracion.html">Configuraciones generales</a></li>
+ 
+   </ul>
+</div>
+
+      <div id="contenedor">
+      <div class="opciones">
+
+         <div class="cont1">
+            <h1 class="funcion">Efectivo</h1>
+            <div><img class="img-user" src="../img/efectivo.png" alt="Efectivo"></div>
+            <h3>Saldo actual: $ </h3>
+         </div>
+
+         <div class="cont2">
+            <h1 class="funcion">Cuentas</h1>
+            <div><img class="img-user" src="../img/cuentas.png" alt="Cuentas"></div>
+            <div class="ver" id="registro_A" class="boton-registro">Ver cuentas registradas</div> 
+            <div class="agregar" id="registro_B" class="boton-registro">Agregar nueva cuenta</div> 
+         </div>
+
+         <div class="cont3">
+            <h1 class="funcion">Tarjetas de crédito</h1>
+            <div><img class="img-user" src="../img/tarjetas.png" alt="Tarjetas de crédito"></div>
+            <div class="ver" id="registro_C" class="boton-registro">Ver tarjetas de crédito</div> 
+            <div class="agregar" id="registro_D" class="boton-registro">Agregar nueva tarjeta</div> 
+         </div>
+
+      </div>
+      </div>
+
+         <!--..........Ver cuentas..........-->
+
+            <div id="modal-A" class="modal">
+            <div class="contenedor-modal">
+
+            <div class="cabecera-modal">
+               <span class="cerrar-modal">&times</span>
+              <h2 class="titulom">Cuentas de ahorro</h2>
+            </div>
+
+            <div class="cuerpo-modal">
+            <form class="form-opcion" method="POST" action=" ">
+                 <p class="label"><li class="mtex"> Cuenta 1</li></p>
+                 <p class="label"><li class="mtex"> Cuenta 2</li></p>
+                 <p class="label"><li class="mtex"> Cuenta 3</li></p>
+
+            </form>
+            </div>
+            </div>
+            </div>
+
+            <script>
+               var a = document.getElementById('modal-A');
+               var bre = document.getElementById("registro_A");
+               var spanre = document.getElementsByClassName("cerrar-modal")[0];
+               bre.onclick = function() {
+                 a.style.display = "block";
+               }
+               spanre.onclick = function() {
+                 a.style.display = "none";
+               }
+            </script>
+
+
+         <!--..........Agregar cuenta..........-->
+
+            <div id="modal-B" class="modal">
+            <div class="contenedor-modal">
+
+            <div class="cabecera-modal">
+               <span class="cerrar-modal">&times</span>
+              <h2 class="titulom">Agregar nueva cuenta</h2>
+            </div>
+
+            <div class="cuerpo-modal">
+            <form class="form-opcion" method="POST" action=" ">
+               <input type="text" name="banco" placeholder="Banco"><br>
+               <input type="text" name="cuenta" placeholder="Número de cuenta"><br>
+               <input type="text" name="saldo" placeholder="Saldo actual"><br>
+               <input type="submit" name="registrar" value="Registrar" class="bb">
+               <input type="reset" name="borrar" value="Borrar" class="bb">
+            </form>
+            </div>
+            </div>
+            </div>
+
+            <script>
+               var b = document.getElementById('modal-B');
+               var bre = document.getElementById("registro_B");
+               var spanre = document.getElementsByClassName("cerrar-modal")[1];
+               bre.onclick = function() {
+                 b.style.display = "block";
+               }
+               spanre.onclick = function() {
+                 b.style.display = "none";
+               }
+            </script>
+
+         <!--..........Ver tarjetas de crédito..........-->
+
+            <div id="modal-C" class="modal">
+            <div class="contenedor-modal">
+
+            <div class="cabecera-modal">
+               <span class="cerrar-modal">&times</span>
+              <h2 class="titulom">Tarjetas de crédito</h2>
+            </div>
+
+            <div class="cuerpo-modal">
+            <form class="form-opcion" method="POST" action=" ">
+                 <p class="label"><li class="mtex"> Tarjeta de crédito 1</li></p>
+                 <p class="label"><li class="mtex"> Tarjeta de crédito 2</li></p>
+                 <p class="label"><li class="mtex"> Tarjeta de crédito 3</li></p>
+
+            </form>
+            </div>
+            </div>
+            </div>
+
+            <script>
+               var c = document.getElementById('modal-C');
+               var bre = document.getElementById("registro_C");
+               var spanre = document.getElementsByClassName("cerrar-modal")[2];
+               bre.onclick = function() {
+                 c.style.display = "block";
+               }
+               spanre.onclick = function() {
+                 c.style.display = "none";
+               }
+            </script>
+
+
+         <!--..........Agregar tarjeta de crédito..........-->
+
+            <div id="modal-D" class="modal">
+            <div class="contenedor-modal">
+
+            <div class="cabecera-modal">
+               <span class="cerrar-modal">&times</span>
+              <h2 class="titulom">Nueva tarjeta de crédito</h2>
+            </div>
+
+            <div class="cuerpo-modal">
+            <form class="form-opcion" method="POST" action=" ">
+               <input type="text" name="banco" placeholder="Banco"><br>
+               <input type="text" name="tarjeta" placeholder="Número de tarjeta"><br>
+               <input type="text" name="saldo" placeholder="Saldo actual"><br>
+               <input type="text" name="interes" placeholder="Interés anual"><br>
+               <input type="date" name="fecha" placeholder="Fecha de vencimiento"><br>
+               <input type="submit" name="registrar" value="Registrar" class="bb">
+               <input type="reset" name="borrar" value="Borrar" class="bb">
+            </form>
+            </div>
+            </div>
+            </div>
+
+            <script>
+               var d = document.getElementById('modal-D');
+               var bre = document.getElementById("registro_D");
+               var spanre = document.getElementsByClassName("cerrar-modal")[3];
+               bre.onclick = function() {
+                 d.style.display = "block";
+               }
+               spanre.onclick = function() {
+                 d.style.display = "none";
+               }
+            </script>
+
+
+
+
+</body>
+</html>
