@@ -1,0 +1,13 @@
+#cuenta{
+  position: absolute;
+  top: 15%;
+  left: 40%;
+  width: auto;
+  height: auto;
+  background: #121b21;
+  color: white;
+}
+#dire{
+  position: absolute;
+  left: 47%;
+}
