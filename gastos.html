@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> Gastos | eWallet </title>
+    <link rel="stylesheet" href="css/estiloCuenta.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link href="https://fonts.googleapis.com/css?family=Questrial|Quicksand|Roboto|Titillium+Web|Amatic+SC|Boogaloo" rel="stylesheet">
+    <script src="js/logeadoPrimero.js"></script>
+  </head>
+  <body>
+    <div class="Contenedor">
+      <header>
+    		<nav>
+    			<ul>
+    				<li><a href="inicio.html">Inicio</a></li>
+    				<li><a href="#">Cuentas</a>
+    					<ul class="sub">
+    						<li><a href="efectivo.html">Efectivo</a></li>
+    						<li><a href="cuentas.html">Cuentas</a></li>
+    						<li><a href="#">Tarjetas de crédito</a></li>
+    					</ul>
+    				</li>
+    				<li><a href="ingresos.html">Ingresos</a></li>
+    				<li><a href="gastos.html">Gastos</a></li>
+    				<li><a href="#">Configuracion general</a></li>
+    				<li><a href="#">Estadisticas</a></li>
+    			</ul>
+    		</nav>
+    	</header>
+      <section>
+        <article>
+          <div class="ModalSaldo" id="ModalSaldo">
+            <div class="SaldoActual">
+              <h1> Su saldo actual </h1>
+              <h3 id="Saldo"></h3>
+              <div class="Cerrar"><a href="javascript:DesplegarSaldo('hidden');"> Cerrar </a></div>
+            </div>
+          </div>
+        </article>
+        <article class="Articulo">
+          <h1 class="Titulo"> Mis gastos </h1>
+          <div class="Gastos" id="Gastos"></div>
+          <div id="AgregarGasto" class="AgregarGasto">
+            <p class="AG"> Agregar nuevo gasto </p>
+            <a href="javascript:DesplegarAgregarCuenta('visible');">Agregar cuenta</a>
+          </div>
+          <!--<div id="Margen"><p></p></div>-->
+          <!--<div class="AgregarMotivo">
+            <p> Agregar nuevo motivo </p><br>
+            <a href=""><img src="../img/Boton.png" class="BotonAgregarMotivo"></a>
+          </div>-->
+
+        </article>
+        <div class="ModalAgregarCuenta" id="ModalAgregarCuenta">
+          <div class="SaldoActual2">
+            <h1> Agregar un nuevo gasto </h1><br><br>
+            <select class="Opciones" id="TipoPago">
+              <option value="Pago de celular">Pago de celular</option>
+              <option value="Pago de luz eléctrica">Pago de luz eléctrica</option>
+              <option value="Pago de agua">Pago de agua</option>
+              <option value="Pago de alquiler">Pago de alquiler</option>
+              <option value="Pago de cable">Pago de cable</option>
+              <option value="Pago de internet">Pago de internet</option>
+              <option value="Pago de educación">Pago de educación</option>
+              <option value="Supermercado">Supermercado</option>
+              <option value="Cine">Cine</option>
+              <option value="Discoteca">Discoteca</option>
+              <option value="Teatro">Teatro</option>
+              <option value="Ropa">Ropa</option>
+              <option value="Restaurante">Restaurante</option>
+              <option value="Tecnologia">Tecnología</option>
+              <option value="Mascota">Mascota</option>
+              <option value="Gasolina">Gasolina</option>
+              <option value="Reparaciones">Reparaciones</option>
+            </select><br><br>
+            <input type="date" placeholder="Fecha" id="FechaGasto" class="inputTarjeta"><br><br>
+            <select class="Opciones" id="MontoA">
+              <option value="Efectivo">Efectivo</option>
+              <option value="Cuenta de ahorro">Cuenta de ahorro</option>
+              <option value="Tarjeta de crédito">Tarjeta de crédito</option>
+            </select><br><br>
+            <input type="text" placeholder="Cuenta utilizada" id="CuentaUtilizada" class="inputTarjeta"><br><br>
+            <input type="button" value="Aceptar" id="AgregarCuenta" class="AgregarTarjeta">
+            <div class="Cerrar1"><a href="javascript:DesplegarAgregarCuenta('hidden');"> Cerrar </a></div>
+          </div>
+        </div>
+        <div class="ModalAgregarMotivo" id="ModalAgregarMotivo">
+          <div class="SaldoActual2">
+            <h1> Agregar un nuevo motivo </h1><br><br><br>
+            <form>
+            <input type="text" placeholder="Nombre del motivo" id="NombreMotivo" class="NombreMotivo"><br><br>
+            <input type="button" value="Aceptar" id="AgregarMotivo" class="AgregarTarjeta"><br><br><br><br><br>
+            <div class="Cerrar1"><a href="javascript:DesplegarAgregarMotivo('hidden');"> Cerrar </a></div>
+            <form>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  <script src="js/gastos.js"></script>
+  </body>
+</html>

@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="img/icon.png">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/pop.css">
     <link rel="stylesheet" href="css/fuentes.css">
+    <script type="text/javascript" src="js/validaciones.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
   </head>
   <body>
@@ -15,27 +17,48 @@
         <div class="registro">
           <form class="" action="javascript:void(0)" name="frmregistro" id="dataregistro">
             <h1>Registrate</h1>
-            <label for="name">Nombre: </label><input type="text" name="nombre" value="" placeholder="Nombre">
-            <label for="apellido">Apellido: </label><input type="text" name="apellido" value="" placeholder="Apellido">
-            <label for="email">Email: </label><input type="email" name="email" value="" placeholder="Correo electrónico">
-            <label for="password">Contraseña: </label><input type="password" name="password" value="" placeholder="Password">
-            <label for="">Dirección: </label><input type="text" name="direccion" value="" placeholder="Direncción">
-            <label id="pregunta" name="pregunta"></label><input type="text" name="" value="" placeholder="Ingresa tu respuesta">
-            <label for="dui">DUI: </label><input type="text" name="dui" value="" placeholder="DUI">
-            <label for="nit">NIT: </label><input type="text" name="nit" value="" placeholder="NIT">
-            <label for="celu">Número de celular: </label><input type="text" name="celular" value="" placeholder="Número de celular">
-            <label for="fecha">Fecha de nacimiento: </label><input type="date" name="fecha" value="" placeholder="dd/mm/aaaa">
+            <label for="name">Nombre: </label><input type="text" name="nombre" value="" placeholder="Nombre"><p id="badn"></p>
+            <label for="apellido">Apellido: </label><input type="text" name="apellido" value="" placeholder="Apellido"><p id="badp"></p>
+            <label for="email">Email: </label><input type="email" name="email" value="" placeholder="Correo electrónico"><p id="bade"></p>
+            <label for="password">Contraseña: </label><input type="password" name="password" value="" placeholder="Password"><p id="badpass"></p>
+            <label for="">Dirección: </label><input type="text" name="direccion" value="" placeholder="Direncción"><p id="badd"></p>
+            <label id="pregunta" name="pregunta"></label><input type="text" name="" value="" placeholder="Ingresa tu respuesta"><p id="badr"></p>
+            <label for="dui">DUI: </label><input type="text" name="dui" value="" placeholder="DUI"><p id="baddui"></p>
+            <label for="nit">NIT: </label><input type="text" name="nit" value="" placeholder="NIT"><p id="badnit"></p>
+            <label for="celu">Número de celular: </label><input type="text" name="celular" value="" placeholder="Número de celular"><p id="badte"></p>
+            <label for="fecha">Fecha de nacimiento: </label><input type="date" name="fecha" value="" placeholder="dd/mm/aaaa"><p id="badf"></p>
             <button type="submit" name="button" id="boton">Registrarme</button>
           </form>
         </div>
         <div class="login">
           <form class="" action="javascript:void(0)" name="frmlogeo">
             <h1>Inicia sesión</h1>
-            <label for="email">Email: </label><input type="email" name="correo" value="" placeholder="Correo electrónico">
-            <label for="password">Contraseña: </label><input type="password" name="contra" value="" placeholder="Password">
-            <button type="submit" name="button" id="log">Iniciar sesión</button>
+            <label for="email">Email: </label><input type="email" name="ncorreo" value="" placeholder="Correo electrónico" id="ncorreo">
+            <label for="password">Contraseña: </label><input type="password" name="ncontra" value="" placeholder="Password" id="ncontra">
+            <div><a href="#popup" class="popup-link">Recuperar contraseña</a></div>
+            <button type="submit" name="button" id="bot">Iniciar sesion</button>
           </form>
         </div>
+        <div class="modal-wrapper" id="popup">
+           <div class="popup-contenedor">
+              <form name="frmRecuperar" class="frmrecuperar">
+              	<h1 class="encabezado">Recuperar contraseña</h1>
+        			<label class="titulos">Usuario:</label>
+        			<input type="text" name="txtUsuarioR" id="txtUsuarioR" class="txt1ventana" required>
+        			<label class="titulos">Pregunta:</label>
+        			<select name="Preguntas" id="Preguntas" class="select">
+        				<option value="pregunta1">¿Quién fue tu mejor amigo en la infancia?</option>
+        				<option value="pregunta2">Nombre del colegio donde estudiaste</option>
+        				<option value="pregunta3">Nombre de tu primera mascota</option>
+        				<option value="pregunta4">Libro favorito</option>
+        				<option value="pregunta5">Serie de televisión favorita</option>
+        			</select>
+        			<label class="titulos">Respuesta:</label>
+        			<input type="text" name="txtMostrarP" id="txtMostrarP" class="txt2ventana">
+        			<input type="button" name="btnRecuperarC" id="btnRecuperarC" value="Recuperar" class="btnventana"><br><br>
+        		</form>
+              <a class="popup-cerrar" href="#">X</a>
+           </div>
         <p id="error">
         </p>
       </div>

@@ -1,0 +1,93 @@
+body{
+  font-family: "Futura";
+}
+h2{
+  text-align: center;
+}
+form {
+  width: 300px;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background: #f4f7f8;
+  border-radius: 8px;
+}
+h1 {
+  margin: 0 0 30px 0;
+  text-align: center;
+}
+
+input[type="text"],input[type="password"],input[type="date"],input[type="datetime"],input[type="email"],input[type="number"],input[type="search"],input[type="tel"],input[type="time"],input[type="url"],textarea,select {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  font-size: 16px;
+  height: auto;
+  margin: 0;
+  outline: 0;
+  padding: 15px;
+  width: 90%;
+  background-color: #e8eeef;
+  color: #8a97a0;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+  margin-bottom: 30px;
+}
+button {
+  padding: 19px 39px 18px 39px;
+  color: #FFF;
+  background-color: #4bc970;
+  font-size: 18px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+  width: 100%;
+  border: 1px solid #3ac162;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+  margin-bottom: 10px;
+}
+#popup {
+  visibility: hidden;
+  opacity: 0;
+  margin-top: 0px;
+
+}
+#popup:target {
+  visibility:visible;
+  opacity: 1;
+  background-color: rgba(0,0,0,0.8);
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  margin:0;
+  z-index: 999;
+  transition:all 1s;
+}
+.popup-contenedor {
+  position: relative;
+  background-color: rgba(0, 63, 119, 0.5);
+  color:#333;
+  border-radius: 3px;
+  width:50%;
+}
+a.popup-cerrar {
+  position: absolute;
+  top:3px;
+  right:3px;
+  background-color: #222;
+  padding:7px 10px;
+  font-size: 20px;
+  text-decoration: none;
+  line-height: 1;
+  color:#fff;
+}
+a.popup-cerrar:hover{
+  background-color: red;
+}
+.frmrecuperar{
+  height: auto;
+}
+.cuenta{
+  position:  absolute;
+  margin-top: -50%;
+}

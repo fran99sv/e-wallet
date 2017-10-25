@@ -1,195 +1,137 @@
-var nom = new Array();
-var ape = new Array();
-var cor = new Array();
-var pas = new Array();
-var du = new Array();
-var ni = new Array();
-var cel = new Array();
 var pre = new Array('¿Cuál es tu comida favorita?','¿Cuál es tu color favorito?','¿Cuál es tu bebida favorita?','¿Cuál era el nombre de tu primer mascota?','¿Cuál es tu país favorito?');
-var fec = new Array();
-var saldo = new Array();
+var resp = new Array();
+var user = {};
+var correo = {};
+var password = {};
 var contador = 0;
 function iniciar() {
- var boton = document.getElementById("boton");
- var loge = document.getElementById("log")
- if(boton.addEventListener){
- boton.addEventListener("click", validar, false);
- }
- else if(boton.attachEvent){
- boton.attachEvent("onclick", validar);
- }
- if(loge.addEventListener){
- loge.addEventListener("click", validar, false);
- }
- else if(loge.attachEvent){
- loge.attachEvent("onclick", validar);
- }
+  var bot = document.getElementById("bot");
+  if(boton.addEventListener){
+     boton.addEventListener("click", validar, false);
+  }
+  else if(boton.attachEvent){
+     boton.attachEvent("onclick", validar);
+  }
+  if(bot.addEventListener){
+     bot.addEventListener("click", logeo, false);
+  }
+  else if(bot.attachEvent){
+     bot.attachEvent("onclick", logeo);
+  }
  var x = Math.floor((Math.random() * (pre.length)));
  var y = pre[x];
  document.getElementById("pregunta").innerHTML = y;
 
 }
-function validar(){
-  var nuevocorreo = document.frmlogeo.correo.value;
-  var nuevopas = document.frmlogeo.contra.value;
- var nombre = document.frmregistro.nombre.value;
- var apellido = document.frmregistro.apellido.value;
- var correo = document.frmregistro.email.value;
- var pass = document.frmregistro.apellido.value;
- var dui = document.frmregistro.dui.value;
- var nit = document.frmregistro.nit.value;
- var celular = document.frmregistro.celular.value;
- var fecha = document.frmregistro.fecha.value;
- var valido = false;
- var re = null;
- //alert(dato + "|" + tipo);
- if(nombre == null || nombre == "" || nombre.length == 0){
- valido = false;
- alert("No se ha ingresado ningún valor en el campo de Nombreo format o incorrecto");
- return 0;
- }else if (nombre != null || nombre != "" || nombre.length != 0) {
-     re = /^[\w\.\-\s]+$/;
-     if(re.test(nombre)){
-     valido = true;
-     }
- };
- if(apellido == null || apellido == "" || apellido.length == 0){
-valido = false;
- alert("No se ha ingresado ningún valor en el campo de Apellido o formato incorrecto");
- return 0;
- }else if (apellido != null || apellido != "" || apellido.length != 0) {
-     re = /^[\w\.\-\s]+$/;
-     if(re.test(apellido)){
-     valido = true;
-     }
- };
- if(correo == null || correo == "" || correo.length == 0){
-   valido = false;
-   alert("No se ha ingresado ningún valor en el campo Contraseña o formato incorrecto");
-   return 0;
-   }else if (correo != null || correo != "" || correo.length != 0){
-     re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
-     if(re.test(correo)){
-     valido = true;
-   }
- };
- if(pass == null || pass == "" || pass.length == 0){
-   valido = false;
-   alert("No se ha ingresado ningún valor en el campo Contraseña o formato incorrecto");
-   return 0;
-   }else if (pass != null || pass != "" || pass.length != 0){
-     re = /([a-zA-Z0-9_\-\.]+) @ ([a-zA-Z0-9\-]+)\.([a-zA-Z0-9\-\.]+){8,15}$/;
-     if(re.test(pass)){
-     valido = true;
-   }
- };
-   if(dui == null || dui == "" || dui.length == 0){
+var validar=function(){
+  this.nombre = document.frmregistro.nombre.value;
+  this.apellido = document.frmregistro.apellido.value;
+  this.correo = document.frmregistro.email.value;
+  this.pass = document.frmregistro.password.value;
+  this.dui = document.frmregistro.dui.value;
+  this.nit = document.frmregistro.nit.value;
+  this.celular = document.frmregistro.celular.value;
+  this.fecha = document.frmregistro.fecha.value;
+  this.valido = false;
+  this.re = null;
+  if(!validacion.validaName(this.nombre)){
     valido = false;
-   alert("No se ha ingresado ningún valor en el campo de DUI o formato incorrecto");
-   return 0;
-}else if(dui != null || dui != "" || dui.length != 0){
-       re = /^\d{8}-\d{1}$/;
-       if(re.test(dui)){
-       valido = true;
-       alert("Dui Valido");
-       }
-   };
-   if(nit == null || nit == "" || nit.length == 0){
-   valido = false;
-   alert("No se ha ingresado ningún valor en el campo de NIT o formato incorrecto");
-   return 0;
-   }else if(nit != null || nit != "" || nit.length != 0){
-       re = /^[0-9]{4}-[0-9]{6}-[0-9]{3}-[0-9]{1}$/;
-       if(re.test(nit)){
-       valido = true;
-       }
-   };
-   if(celular == null || celular == "" || celular.length == 0){
-   valido = false;
-   alert("No se ha ingresado ningún valor en el campo de Telefono o formato incorrecto");
-   return 0;
-   }else if(celular != null || celular != "" || celular.length != 0){
-       re = /^[6-7]{1}\d{3}-\d{4}$/;
-       if(re.test(celular)){
-       valido = true;
-       }
-   };
-   if(fecha == null || fecha == "" || fecha.length == 0){
-   alert("No se ha ingresado ningún valor en el campo de Fecha");
-   return 0;
-   valido = false;
-   }else if(fecha != null || fecha != "" || fecha.length != 0){
-       re = /^\d{1,2}\/\d{1,2}\/\d{2,4}$/;;
-       if(re.test(fecha)){
-       valido = true;
-       }
-   };
-   if(valido = false){
-   }else{
-     for(i=0;i<=contador-1;i++){
-       if(correo == cor[i]){
-         alert("El correo que ha ingresado ya ha sido registrado");
-         i = contador-1;
-         valido = false;
-         contador += 0;
-       }else{
-         valido = true;
-       }
-   };
- }
+    alert("Revisa los datos");
+    document.getElementById("badn").innerHTML = "El formato del nombre esta malo";
+    return 0;
+  } else { valido = true; };
+  if(!validacion.validaLast(this.apellido)){
+    valido = false;
+    alert("Revisa los datos");
+    document.getElementById("badl").innerHTML = "El formato del apellido esta malo";
+    return 0;
+  } else { valido = true; };
+  if(!validacion.validaEmail(this.correo)){
+    valido = false;
+    alert("Revisa los datos");
+    document.getElementById("bade").innerHTML = "El formato del email debe de ser $$$@$$$.com";
+    return 0;
+  } else { valido = true; };
+  if(!validacion.validaPassword(this.pass)){
+    valido = false;
+    document.getElementById("badpass").innerHTML = "La contraseña debe tener minimo una minuscula, una mayuscula, un simbolo, entre 8 a 15 caracteres";
+    return 0;
+  } else { valido = true; };
+  if(!validacion.validaDui(this.dui)){
+    alert("Revisa los datos");
+    document.getElementById("baddui").innerHTML = "El formato del DUI es nnnnnnnnn-m";
+    return 0;
+  } else { valido = true; };
+  if(!validacion.validaNit(this.nit)){
+    valido = false;
+    alert("Revisa los datos");
+    document.getElementById("badnit").innerHTML = "El formato del NIT es ####-######-###-#";
+    return 0;
+  } else { valido = true; };
+    if(!validacion.validaPhone(this.celular)){
+      valido = false;
+      alert("Revisa los datos");
+      document.getElementById("badn").innerHTML = "El formato del telefono es ####-####";
+      return 0;
+    } else { valido = true; }
    if (valido = true){
-    añadir();
-    contador += 1;
-    console.log(contador);
-    for(i=0; i<=contador-1;i++){
-      nom[i],ape[i],cor[i],pas[i],du[i],ni[i],cel[i],
-      pre[i],fec[i],saldo[i]=0;
-      logeo(nuevocorreo,nuevopas);
-    }
+     añadir();
    }
    //funcion validar
 }
-function añadir(){
+var añadir = function (){
+  var user = {
+    nombre : document.frmregistro.nombre.value,
+    apellido : document.frmregistro.apellido.value,
+    dui : document.frmregistro.dui.value,
+    email : document.frmregistro.email.value,
+    password : document.frmregistro.password.value,
+    nit : document.frmregistro.nit.value,
+    celular : document.frmregistro.celular.value,
+    fecha : document.frmregistro.fecha.value
+  };
+  var us = (localStorage.user!==undefined && localStorage.user!==null) ? JSON.parse(localStorage.user) : new Array() ;
+  us.push(user);
+  localStorage.user = JSON.stringify(us);
+  /**/
+  var correo = {
+    email : document.frmregistro.email.value,
+  };
+  var cor = (localStorage.email!==undefined && localStorage.email!==null) ? JSON.parse(localStorage.email) : new Array() ;
+  cor.push(correo);
+  localStorage.email = JSON.stringify(cor);
 
-  addnom = document.frmregistro.nombre.value;
-  nom.push(addnom);
-  console.log(addnom);
-  addlast = document.frmregistro.apellido.value;
-  ape.push(addlast);
-  console.log(addlast);
-  addcor = document.frmregistro.email.value;
-  cor.push(addcor);
-  console.log(addcor);
-  addpass = document.frmregistro.password.value;
-  pas.push(addpass);
-  console.log(addpass);
-  adddui = document.frmregistro.dui.value;
-  du.push(adddui);
-  console.log(adddui);
-  addnit = document.frmregistro.nit.value;
-  ni.push(addnit);
-  console.log(addnit);
-  addcelular = document.frmregistro.celular.value;
-  cel.push(addcelular);
-  console.log(addcelular);
-  addfecha = document.frmregistro.fecha.value;
-  fec.push(addfecha);
-  console.log(addfecha);
-  saldo.push(0);
-  alert("Registrado exitosamente")
+  var password = {
+    password : document.frmregistro.password.value,
+  };
+  var pass = (localStorage.password!==undefined && localStorage.password!==null) ? JSON.parse(localStorage.password) : new Array() ;
+  pass.push(password);
+  localStorage.password = JSON.stringify(pass);
+  localStorage.count = JSON.stringify(contador);
+  alert("Registrado exitosamente");
+  limpiar();
 }
-function logeo(nuevocorreo,nuevopas,nuevosaldo){
-  for(j=0;j<=contador-1;j++){
-    if(nuevocorreo==cor[j]){
-      if (nuevopas==pas[j]) {
-        alert("Bienvenido");
-        if(saldo[1]==0){
-          prompt("Ingrese el saldo de su cuenta: ");
-        }
-      }
-    }else {
-      alert("Correo o contraseña incorrectos, intentalo de nuevo");
-    }
+function limpiar(){
+  document.frmregistro.nombre.value="";
+  document.frmregistro.apellido.value="";
+  document.frmregistro.dui.value="";
+  document.frmregistro.email.value="";
+  document.frmregistro.password.value;
+  document.frmregistro.nit.value="";
+  document.frmregistro.celular.value="";
+  document.frmregistro.fecha.value="";
+}
+function logeo(){
+  var storedEmail = localStorage.email;
+  var storedPass = localStorage.password;
+  var actualEmail = document.frmlogeo.ncorreo.value;
+  var actualPass = document.frmlogeo.ncontra.value;
+   if(storedEmail!=actualEmail && storedPass!=actualPass){
+     alert("Bienvenido");
+     location.href = "primera.html";
+  }else{
+    alert("Hola");
+    location.href = "html/principial.html";
   }
 }
 //Asociando función que manejará el evento load al cargar la página

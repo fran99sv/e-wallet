@@ -1,6 +1,10 @@
 
 /*---------------Menú de opciones---------------*/
 
+.posic{
+    margin-top: 3%;
+    margin-left: 25%;
+}
 div#contenedor {
     width: 100%;
     height: 410px;

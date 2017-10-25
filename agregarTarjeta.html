@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8"/>
+	<title>Agregar_Tarjeta</title>
+	<link rel="stylesheet" type="text/css" href="css/menu.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+
+</head>
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li><a href="inicio.html">Inicio</a></li>
+				<li><a href="#">Cuentas</a>
+					<ul class="sub">
+						<li><a href="efectivo.html">Efectivo</a></li>
+						<li><a href="cuentas.html">Cuentas</a></li>
+						<li><a href="#">Tarjetas de crédito</a></li>
+					</ul>
+				</li>
+				<li><a href="ingresos.html">Ingresos</a></li>
+				<li><a href="gastos.html">Gastos</a></li>
+				<li><a href="#">Configuracion general</a></li>
+				<li><a href="#">Estadisticas</a></li>
+			</ul>
+		</nav>
+	</header>
+		<h1>Agregar Tarjeta de Crédito</h1>
+	<section>
+		<form>
+			<label>Banco:</label>
+			<input type="text" name="txtNomBanco" id="txtNomBanco" class="txt1" required>
+			<label>Número de Tarjeta:</label>
+			<input type="text" name="txtNumTarjeta" id="txtNumTarjeta" class="txt2" required>
+			<label>Saldo Actual:</label>
+			<label>$</label>
+			<input type="text" name="txtSaldoActual" id="txtSaldoActual" class="txt3" required>
+			<label>Interés anual:</label>
+			<input type="text" name="txtInteres" id="txtInteres" class="txt4" required>
+			<label>%</label>
+			<label>Fecha pago mensual:</label>
+			<input type="text" name="txtFechVenci" id="txtFechVenci" class="txt5" required>
+			<input type="button" name="btnAgregarT" id="btnAgregarT" value="Agregar Tarjeta" class="btn">
+		</form>
+	</section>
+</body>
+</html>
